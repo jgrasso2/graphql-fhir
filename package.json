@@ -10,7 +10,8 @@
     "start": "node src/index",
     "nodemon": "node src/scripts/nodemon",
     "test": "node src/scripts/test --env=jsdom",
-    "prettier": "prettier \"src/**/*.js\" --write",
+    "prettier": "prettier \"src/{!(resources), **}/*.js\" --write",
+		"prettier-generated": "prettier \"src/resources/**/*.js\" --write",
     "lint": "eslint \"src/**/*.js\""
   },
   "prettier": {
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@asymmetrik/fhir-gql-schema-utils": "^1.0.1",
+    "@asymmetrik/sof-strategy": "^1.0.1",
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",
     "express": "^4.16.3",
